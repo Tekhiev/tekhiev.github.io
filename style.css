@@ -1,0 +1,2159 @@
+
+/*==================================================
+  HYDROPOWER WEBSITE
+  STYLE.CSS
+  PART 1
+==================================================*/
+
+
+/*=========================
+        VARIABLES
+=========================*/
+
+:root{
+
+    --bg:#05070B;
+    --bg-secondary:#0D1117;
+    --bg-card:rgba(17,25,40,.72);
+
+    --text:#ffffff;
+    --text-light:#b7c3cf;
+
+    --accent:#35b8ff;
+    --accent-light:#6bd7ff;
+
+    --border:rgba(255,255,255,.08);
+
+    --shadow:
+        0 20px 60px rgba(0,0,0,.45);
+
+    --radius:18px;
+
+    --transition:.35s ease;
+
+    --container:1280px;
+
+}
+
+
+
+/*=========================
+        RESET
+=========================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        sans-serif;
+
+    overflow-x:hidden;
+
+    line-height:1.7;
+
+    -webkit-font-smoothing:antialiased;
+
+}
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+}
+
+button{
+
+    font:inherit;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+
+
+/*=========================
+    TYPOGRAPHY
+=========================*/
+
+h1{
+
+    font-size:clamp(3rem,6vw,6rem);
+
+    font-weight:300;
+
+    line-height:1.05;
+
+    letter-spacing:-2px;
+
+}
+
+h2{
+
+    font-size:clamp(2.3rem,5vw,4rem);
+
+    font-weight:300;
+
+}
+
+h3{
+
+    font-size:1.6rem;
+
+    font-weight:400;
+
+}
+
+p{
+
+    color:var(--text-light);
+
+    font-size:1.05rem;
+
+}
+
+
+
+/*=========================
+      CONTAINER
+=========================*/
+
+.container{
+
+    width:min(var(--container),92%);
+
+    margin:auto;
+
+}
+
+
+
+/*=========================
+      SECTION
+=========================*/
+
+section{
+
+    position:relative;
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:120px 0;
+
+    overflow:hidden;
+
+}
+
+section::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        linear-gradient(
+
+            rgba(5,7,11,.55),
+
+            rgba(5,7,11,.85)
+
+        );
+
+    z-index:1;
+
+}
+
+section>.container{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+
+/*=========================
+      BACKGROUND
+=========================*/
+
+.bg-image{
+
+    position:absolute;
+
+    inset:0;
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    transform:scale(1.04);
+
+    transition:8s ease;
+
+}
+
+section:hover .bg-image{
+
+    transform:scale(1.08);
+
+}
+
+
+
+/*=========================
+        HEADER
+=========================*/
+
+header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:999;
+
+    backdrop-filter:blur(16px);
+
+    background:
+
+        rgba(5,7,11,.58);
+
+    border-bottom:
+
+        1px solid var(--border);
+
+}
+
+.navbar{
+
+    height:82px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.logo{
+
+    font-size:1.3rem;
+
+    font-weight:600;
+
+    letter-spacing:3px;
+
+    color:#fff;
+
+}
+
+.logo span{
+
+    color:var(--accent);
+
+}
+
+
+
+/*=========================
+       NAVIGATION
+=========================*/
+
+nav ul{
+
+    display:flex;
+
+    gap:40px;
+
+}
+
+nav a{
+
+    color:var(--text-light);
+
+    transition:var(--transition);
+
+    position:relative;
+
+}
+
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--accent);
+
+    transition:.35s;
+
+}
+
+nav a:hover{
+
+    color:#fff;
+
+}
+
+nav a:hover::after{
+
+    width:100%;
+
+}
+
+
+
+/*=========================
+        BUTTONS
+=========================*/
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:16px 34px;
+
+    border-radius:100px;
+
+    background:var(--accent);
+
+    color:white;
+
+    transition:var(--transition);
+
+    box-shadow:
+
+        0 12px 35px
+
+        rgba(53,184,255,.25);
+
+}
+
+.btn:hover{
+
+    transform:translateY(-4px);
+
+    background:var(--accent-light);
+
+    box-shadow:
+
+        0 18px 45px
+
+        rgba(53,184,255,.4);
+
+}
+
+.btn-outline{
+
+    background:transparent;
+
+    border:1px solid
+
+    rgba(255,255,255,.18);
+
+}
+
+.btn-outline:hover{
+
+    border-color:var(--accent);
+
+}
+
+
+
+/*=========================
+        HERO
+=========================*/
+
+.hero{
+
+    background:#000;
+
+}
+
+.hero-content{
+
+    max-width:760px;
+
+}
+
+.hero-subtitle{
+
+    display:inline-block;
+
+    margin:20px 0;
+
+    color:var(--accent);
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    font-size:.9rem;
+
+}
+
+.hero p{
+
+    max-width:650px;
+
+    margin:30px 0 50px;
+
+    font-size:1.2rem;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+/*=========================
+     HERO WATER LINE
+=========================*/
+
+.hero-line{
+
+    width:120px;
+
+    height:4px;
+
+    border-radius:100px;
+
+    background:var(--accent);
+
+    margin-top:40px;
+
+    box-shadow:
+
+        0 0 30px
+
+        rgba(53,184,255,.5);
+
+}
+
+
+
+/*=========================
+        SCROLL ICON
+=========================*/
+
+.scroll-indicator{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:40px;
+
+    transform:translateX(-50%);
+
+    width:34px;
+
+    height:60px;
+
+    border:
+
+        2px solid rgba(255,255,255,.4);
+
+    border-radius:30px;
+
+}
+
+.scroll-indicator::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:12px;
+
+    width:6px;
+
+    height:12px;
+
+    border-radius:10px;
+
+    background:var(--accent);
+
+    transform:translateX(-50%);
+
+    animation:scroll 2s infinite;
+
+}
+
+@keyframes scroll{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+        translate(-50%,0);
+
+    }
+
+    50%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+        translate(-50%,20px);
+
+    }
+
+}
+
+/*==================================================
+  HYDROPOWER WEBSITE
+  STYLE.CSS
+  PART 2
+==================================================*/
+
+
+/*=========================
+        GRID
+=========================*/
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:80px;
+
+    align-items:center;
+
+}
+
+.grid-3{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:35px;
+
+}
+
+
+
+/*=========================
+      GLASS CARD
+=========================*/
+
+.card{
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    padding:40px;
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:
+
+        rgba(53,184,255,.35);
+
+    box-shadow:
+
+        0 25px 60px
+
+        rgba(0,0,0,.55);
+
+}
+
+
+
+/*=========================
+        TEXT
+=========================*/
+
+.section-title{
+
+    margin-bottom:24px;
+
+}
+
+.section-subtitle{
+
+    display:inline-block;
+
+    color:var(--accent);
+
+    font-size:.85rem;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    margin-bottom:18px;
+
+}
+
+.section-text{
+
+    max-width:700px;
+
+    color:var(--text-light);
+
+    margin-bottom:35px;
+
+}
+
+
+
+/*=========================
+     ABOUT SECTION
+=========================*/
+
+.about{
+
+    position:relative;
+
+}
+
+.about-content{
+
+    max-width:680px;
+
+}
+
+.about-features{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:25px;
+
+    margin-top:50px;
+
+}
+
+.feature{
+
+    background:
+
+        rgba(255,255,255,.03);
+
+    border:
+
+        1px solid rgba(255,255,255,.06);
+
+    border-radius:16px;
+
+    padding:28px;
+
+    transition:.35s;
+
+}
+
+.feature:hover{
+
+    background:
+
+        rgba(53,184,255,.08);
+
+    transform:translateY(-6px);
+
+}
+
+.feature h3{
+
+    margin-bottom:10px;
+
+}
+
+.feature p{
+
+    font-size:.95rem;
+
+}
+
+
+
+/*=========================
+      VISION
+=========================*/
+
+.vision{
+
+    position:relative;
+
+}
+
+.vision-content{
+
+    max-width:760px;
+
+}
+
+.vision-quote{
+
+    margin-top:50px;
+
+    padding-left:30px;
+
+    border-left:
+
+        4px solid var(--accent);
+
+}
+
+.vision-quote p{
+
+    font-size:1.3rem;
+
+    color:white;
+
+    font-weight:300;
+
+}
+
+
+
+/*=========================
+    SUSTAINABILITY
+=========================*/
+
+.sustainability{
+
+    position:relative;
+
+}
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:25px;
+
+    margin-top:60px;
+
+}
+
+.stat{
+
+    background:
+
+        rgba(255,255,255,.04);
+
+    padding:35px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    border:
+
+        1px solid rgba(255,255,255,.08);
+
+    transition:.35s;
+
+}
+
+.stat:hover{
+
+    background:
+
+        rgba(53,184,255,.08);
+
+    transform:translateY(-8px);
+
+}
+
+.stat-number{
+
+    font-size:3rem;
+
+    color:var(--accent);
+
+    font-weight:300;
+
+}
+
+.stat-title{
+
+    margin-top:12px;
+
+    color:var(--text-light);
+
+}
+
+
+
+/*=========================
+     DECORATION
+=========================*/
+
+.glow{
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    background:
+
+        rgba(53,184,255,.12);
+
+    pointer-events:none;
+
+}
+
+.glow.left{
+
+    left:-150px;
+
+    top:10%;
+
+}
+
+.glow.right{
+
+    right:-150px;
+
+    bottom:10%;
+
+}
+
+
+
+/*=========================
+       DIVIDER
+=========================*/
+
+.divider{
+
+    width:120px;
+
+    height:3px;
+
+    border-radius:100px;
+
+    margin:40px 0;
+
+    background:
+
+        linear-gradient(
+            to right,
+            var(--accent),
+            transparent
+        );
+
+}
+
+
+
+/*=========================
+      ANIMATIONS
+=========================*/
+
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:
+
+        opacity .9s ease,
+
+        transform .9s ease;
+
+}
+
+.fade-up.active{
+
+    opacity:1;
+
+    transform:none;
+
+}
+
+.fade-left{
+
+    opacity:0;
+
+    transform:translateX(-60px);
+
+    transition:1s;
+
+}
+
+.fade-left.active{
+
+    opacity:1;
+
+    transform:none;
+
+}
+
+.fade-right{
+
+    opacity:0;
+
+    transform:translateX(60px);
+
+    transition:1s;
+
+}
+
+.fade-right.active{
+
+    opacity:1;
+
+    transform:none;
+
+}
+
+
+
+/*=========================
+      IMAGE EFFECT
+=========================*/
+
+.image-frame{
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    border:
+
+        1px solid rgba(255,255,255,.08);
+
+    box-shadow:var(--shadow);
+
+}
+
+.image-frame img{
+
+    transition:8s ease;
+
+}
+
+.image-frame:hover img{
+
+    transform:scale(1.08);
+
+}
+
+
+
+/*=========================
+      FLOATING DOTS
+=========================*/
+
+.dot{
+
+    position:absolute;
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:var(--accent);
+
+    box-shadow:
+
+        0 0 20px
+
+        rgba(53,184,255,.8);
+
+    animation:
+
+        pulse 3s infinite;
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        opacity:.2;
+
+        transform:scale(.7);
+
+    }
+
+    50%{
+
+        opacity:1;
+
+        transform:scale(1.4);
+
+    }
+
+    100%{
+
+        opacity:.2;
+
+        transform:scale(.7);
+
+    }
+
+}
+
+
+
+/*=========================
+     SECTION SPACING
+=========================*/
+
+.section-content>*{
+
+    margin-bottom:28px;
+
+}
+
+.section-content>*:last-child{
+
+    margin-bottom:0;
+
+}
+
+/*==================================================
+  HYDROPOWER WEBSITE
+  STYLE.CSS
+  PART 3
+==================================================*/
+
+
+/*=========================
+      TECHNOLOGY
+=========================*/
+
+.technology{
+
+    position:relative;
+
+}
+
+.tech-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+.tech-content{
+
+    max-width:700px;
+
+}
+
+.tech-list{
+
+    margin-top:45px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:22px;
+
+}
+
+.tech-item{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:18px;
+
+}
+
+.tech-icon{
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:
+
+        rgba(53,184,255,.12);
+
+    color:var(--accent);
+
+    font-size:1.3rem;
+
+    flex-shrink:0;
+
+}
+
+.tech-item h3{
+
+    margin-bottom:8px;
+
+}
+
+
+
+/*=========================
+     IMAGE CARD
+=========================*/
+
+.tech-image{
+
+    position:relative;
+
+}
+
+.tech-image img{
+
+    width:100%;
+
+    border-radius:24px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.tech-image::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-12px;
+
+    border:
+
+        1px solid rgba(53,184,255,.18);
+
+    border-radius:28px;
+
+}
+
+
+
+/*=========================
+      MODULAR
+=========================*/
+
+.modular{
+
+    position:relative;
+
+}
+
+.modular-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:30px;
+
+    margin-top:70px;
+
+}
+
+.module-card{
+
+    padding:35px;
+
+    border-radius:22px;
+
+    background:
+
+        rgba(255,255,255,.03);
+
+    border:
+
+        1px solid rgba(255,255,255,.08);
+
+    transition:.35s;
+
+}
+
+.module-card:hover{
+
+    transform:translateY(-10px);
+
+    background:
+
+        rgba(53,184,255,.08);
+
+}
+
+.module-number{
+
+    font-size:3rem;
+
+    color:var(--accent);
+
+    font-weight:300;
+
+    margin-bottom:18px;
+
+}
+
+
+
+/*=========================
+       PATENT
+=========================*/
+
+.patent{
+
+    position:relative;
+
+}
+
+.patent-wrapper{
+
+    display:grid;
+
+    grid-template-columns:
+        1.2fr .8fr;
+
+    gap:60px;
+
+    align-items:center;
+
+}
+
+.patent-card{
+
+    background:
+
+        rgba(255,255,255,.03);
+
+    border-radius:22px;
+
+    border:
+
+        1px solid rgba(255,255,255,.08);
+
+    padding:45px;
+
+}
+
+.patent-info{
+
+    margin-top:40px;
+
+    display:grid;
+
+    gap:18px;
+
+}
+
+.patent-info li{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    border-bottom:
+
+        1px solid rgba(255,255,255,.06);
+
+    padding-bottom:12px;
+
+}
+
+.patent-info span{
+
+    color:var(--text-light);
+
+}
+
+
+
+/*=========================
+      ENERGY
+=========================*/
+
+.energy{
+
+    position:relative;
+
+}
+
+.energy-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:80px;
+
+    align-items:center;
+
+}
+
+.energy-list{
+
+    display:grid;
+
+    gap:22px;
+
+    margin-top:45px;
+
+}
+
+.energy-item{
+
+    display:flex;
+
+    gap:18px;
+
+    align-items:flex-start;
+
+}
+
+.energy-item i{
+
+    width:52px;
+
+    height:52px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:
+
+        rgba(53,184,255,.12);
+
+    color:var(--accent);
+
+    font-size:1.2rem;
+
+}
+
+.energy-item h4{
+
+    margin-bottom:6px;
+
+}
+
+
+
+/*=========================
+      INFO BOX
+=========================*/
+
+.info-box{
+
+    padding:32px;
+
+    border-radius:20px;
+
+    background:
+
+        rgba(255,255,255,.03);
+
+    border:
+
+        1px solid rgba(255,255,255,.08);
+
+    transition:.35s;
+
+}
+
+.info-box:hover{
+
+    border-color:
+
+        rgba(53,184,255,.35);
+
+    transform:translateY(-6px);
+
+}
+
+
+
+/*=========================
+      TAGS
+=========================*/
+
+.tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:40px;
+
+}
+
+.tag{
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    background:
+
+        rgba(53,184,255,.08);
+
+    border:
+
+        1px solid rgba(53,184,255,.25);
+
+    color:var(--accent);
+
+    font-size:.9rem;
+
+}
+
+
+
+/*=========================
+     PARALLAX EFFECT
+=========================*/
+
+.parallax{
+
+    background-attachment:fixed;
+
+    background-size:cover;
+
+    background-position:center;
+
+}
+
+
+
+/*=========================
+     SECTION OVERLAY
+=========================*/
+
+.dark-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        linear-gradient(
+
+            rgba(5,7,11,.40),
+
+            rgba(5,7,11,.82)
+
+        );
+
+}
+
+
+
+/*=========================
+     IMAGE SHADOW
+=========================*/
+
+.soft-shadow{
+
+    box-shadow:
+
+        0 35px 90px
+
+        rgba(0,0,0,.55);
+
+}
+
+
+
+/*=========================
+     HOVER SCALE
+=========================*/
+
+.hover-scale{
+
+    transition:.5s;
+
+}
+
+.hover-scale:hover{
+
+    transform:scale(1.03);
+
+}
+
+
+
+/*=========================
+      ACCENT LINE
+=========================*/
+
+.accent-line{
+
+    width:90px;
+
+    height:4px;
+
+    border-radius:10px;
+
+    background:var(--accent);
+
+    margin:28px 0;
+
+}
+
+
+
+/*=========================
+      BACKDROP BLUR
+=========================*/
+
+.blur-card{
+
+    backdrop-filter:blur(16px);
+
+}
+
+/*==================================================
+  HYDROPOWER WEBSITE
+  STYLE.CSS
+  PART 4
+==================================================*/
+
+
+/*=========================
+        CONTACT
+=========================*/
+
+.contact{
+
+    position:relative;
+
+}
+
+.contact-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:80px;
+
+    align-items:center;
+
+}
+
+.contact-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:28px;
+
+}
+
+.contact-item{
+
+    display:flex;
+
+    gap:20px;
+
+    align-items:flex-start;
+
+}
+
+.contact-icon{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(53,184,255,.12);
+
+    color:var(--accent);
+
+    font-size:1.3rem;
+
+}
+
+.contact-form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.contact-form input,
+.contact-form textarea{
+
+    width:100%;
+
+    padding:18px 22px;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:16px;
+
+    color:white;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.contact-form textarea{
+
+    resize:vertical;
+
+    min-height:180px;
+
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+
+    border-color:var(--accent);
+
+    background:rgba(53,184,255,.05);
+
+}
+
+
+
+/*=========================
+        FOOTER
+=========================*/
+
+footer{
+
+    padding:70px 0;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    background:#040608;
+
+}
+
+.footer-content{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:30px;
+
+}
+
+.footer-links{
+
+    display:flex;
+
+    gap:25px;
+
+}
+
+.footer-links a{
+
+    color:var(--text-light);
+
+    transition:.3s;
+
+}
+
+.footer-links a:hover{
+
+    color:var(--accent);
+
+}
+
+.footer-copy{
+
+    color:var(--text-light);
+
+    font-size:.95rem;
+
+}
+
+
+
+/*=========================
+      SOCIAL ICONS
+=========================*/
+
+.social{
+
+    display:flex;
+
+    gap:16px;
+
+}
+
+.social a{
+
+    width:46px;
+
+    height:46px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.35s;
+
+}
+
+.social a:hover{
+
+    background:var(--accent);
+
+    transform:translateY(-5px);
+
+}
+
+
+
+/*=========================
+      BACK TO TOP
+=========================*/
+
+.back-top{
+
+    position:fixed;
+
+    right:35px;
+
+    bottom:35px;
+
+    width:56px;
+
+    height:56px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:var(--accent);
+
+    color:white;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.35s;
+
+    box-shadow:0 15px 35px rgba(53,184,255,.35);
+
+}
+
+.back-top.show{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+}
+
+.back-top:hover{
+
+    transform:translateY(-6px);
+
+}
+
+
+
+/*=========================
+      SCROLLBAR
+=========================*/
+
+::-webkit-scrollbar{
+
+    width:11px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#090d12;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--accent);
+
+    border-radius:20px;
+
+}
+
+
+
+/*=========================
+     SELECTION
+=========================*/
+
+::selection{
+
+    background:var(--accent);
+
+    color:white;
+
+}
+
+
+
+/*=========================
+     RESPONSIVE
+=========================*/
+
+@media(max-width:1200px){
+
+.grid,
+.tech-grid,
+.energy-grid,
+.contact-grid,
+.patent-wrapper{
+
+grid-template-columns:1fr;
+
+gap:50px;
+
+}
+
+.modular-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.stats{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+
+
+@media(max-width:900px){
+
+nav{
+
+display:none;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+}
+
+.grid-3{
+
+grid-template-columns:1fr;
+
+}
+
+.about-features{
+
+grid-template-columns:1fr;
+
+}
+
+.modular-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.stats{
+
+grid-template-columns:1fr;
+
+}
+
+.footer-content{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.social{
+
+justify-content:center;
+
+}
+
+}
+
+
+
+@media(max-width:600px){
+
+section{
+
+padding:90px 0;
+
+}
+
+h1{
+
+font-size:2.6rem;
+
+}
+
+h2{
+
+font-size:2rem;
+
+}
+
+.card{
+
+padding:28px;
+
+}
+
+.contact-form input,
+.contact-form textarea{
+
+padding:16px;
+
+}
+
+.btn{
+
+width:100%;
+
+justify-content:center;
+
+}
+
+.logo{
+
+font-size:1.05rem;
+
+letter-spacing:2px;
+
+}
+
+.back-top{
+
+right:18px;
+
+bottom:18px;
+
+}
+
+}
+
+
+
+/*=========================
+     FINAL POLISH
+=========================*/
+
+.reveal{
+
+opacity:0;
+
+transform:translateY(40px);
+
+transition:all .9s ease;
+
+}
+
+.reveal.active{
+
+opacity:1;
+
+transform:none;
+
+}
+
+.blur{
+
+filter:blur(0);
+
+transition:filter .5s ease;
+
+}
+
+.blur:hover{
+
+filter:blur(1px);
+
+}
+
+.shadow-hover{
+
+transition:.4s;
+
+}
+
+.shadow-hover:hover{
+
+box-shadow:0 30px 80px rgba(0,0,0,.55);
+
+}
+
+
+
+/*=========================
+       THE END
+=========================*/

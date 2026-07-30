@@ -431,9 +431,8 @@ nav a:hover::after{
 }
 
 .hero-content{
-
-    max-width:760px;
-
+    max-width:720px;
+    padding-top:40px;
 }
 
 .hero-subtitle{

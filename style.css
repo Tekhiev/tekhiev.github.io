@@ -2231,6 +2231,15 @@ box-shadow:0 30px 80px rgba(0,0,0,.55);
     margin-bottom:35px;
 
 }
+
+.thank-you .btn{
+
+    display:inline-block;
+
+    margin-top:10px;
+
+}
+
 @media(max-width:600px){
 
     .thank-you{

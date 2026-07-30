@@ -2231,7 +2231,27 @@ box-shadow:0 30px 80px rgba(0,0,0,.55);
     margin-bottom:35px;
 
 }
+@media(max-width:600px){
 
+    .thank-you{
+
+        padding:20px;
+
+    }
+
+    .thank-you-box{
+
+        padding:40px 24px;
+
+    }
+
+    .checkmark{
+
+        font-size:56px;
+
+    }
+
+}
 
 /*=========================
        THE END

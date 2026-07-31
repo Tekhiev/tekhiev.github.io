@@ -2263,5 +2263,42 @@ box-shadow:0 30px 80px rgba(0,0,0,.55);
 }
 
 /*=========================
+       DOCUMENTS
+=========================*/
+
+.documents{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:120px 0;
+
+}
+
+.documents .container{
+
+    position:relative;
+
+    z-index:1;
+
+}
+
+.documents .section-title{
+
+    margin-bottom:50px;
+
+}
+
+@media(max-width:768px){
+
+    .documents{
+
+        padding:70px 0;
+
+    }
+
+}
+/*=========================
        THE END
 =========================*/
